@@ -1,0 +1,103 @@
+{
+  "$schema": "floorplan/architecture@1",
+  "audience": "everyone",
+  "project": {
+    "name": "Project-1-Soccer-League",
+    "summary": "A terminal batch script reads a roster, balances experience across three teams and writes a practice letter per player. No web server or HTTP routes.",
+    "entrypoints": [
+      "league_builder.py"
+    ]
+  },
+  "include": [
+    "code",
+    "config",
+    "data",
+    "docs",
+    "other"
+  ],
+  "nodes": [
+    {
+      "id": "roster",
+      "label": "CSV roster input",
+      "summary": "The local CSV supplies player fields; record values are outside this map.",
+      "paths": [],
+      "kind": "external"
+    },
+    {
+      "id": "assign",
+      "label": "Experience-balanced allocation",
+      "summary": "open_csv reads dictionaries; build_teams splits experience; assigner cycles three teams separately for each cohort.",
+      "paths": [
+        "league_builder.py"
+      ],
+      "kind": "service"
+    },
+    {
+      "id": "letters",
+      "label": "Generated practice letters",
+      "summary": "generate_letters writes a lowercase underscore-named text file per player, choosing practice time by team.",
+      "paths": [],
+      "kind": "external"
+    }
+  ],
+  "edges": [
+    {
+      "from": "roster",
+      "to": "assign",
+      "label": "Partition experience and cycle team assignment within each partition.",
+      "kind": "data"
+    },
+    {
+      "from": "assign",
+      "to": "letters",
+      "label": "Write guardian letters from each assigned player dictionary.",
+      "kind": "data"
+    }
+  ],
+  "flows": [
+    {
+      "id": "main",
+      "title": "Follow the terminal processing path",
+      "steps": [
+        {
+          "node": "roster",
+          "note": "Read the CSV from the current working directory."
+        },
+        {
+          "node": "assign",
+          "note": "Partition experience and cycle team assignment within each partition."
+        },
+        {
+          "node": "letters",
+          "note": "Write guardian letters from each assigned player dictionary."
+        }
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "node": "roster",
+      "title": "CSV roster input",
+      "note": "The local CSV supplies player fields; record values are outside this map."
+    },
+    {
+      "node": "assign",
+      "title": "Experience-balanced allocation",
+      "note": "open_csv reads dictionaries; build_teams splits experience; assigner cycles three teams separately for each cohort."
+    },
+    {
+      "node": "letters",
+      "title": "Generated practice letters",
+      "note": "generate_letters writes a lowercase underscore-named text file per player, choosing practice time by team."
+    }
+  ],
+  "annotations": [
+    {
+      "path": "league_builder.py",
+      "note": "The input CSV is deliberately outside the admitted snapshot. Allocation balances counts within experience cohorts, not player height. No app execution or generated letters were inspected.",
+      "tags": [
+        "hotspot"
+      ]
+    }
+  ]
+}

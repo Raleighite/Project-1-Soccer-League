@@ -1,0 +1,9 @@
+{
+  "files": {
+    "league_builder.py": {
+      "name": "Roster-to-letter batch",
+      "description": "Reads CSV dictionaries, assigns experienced and inexperienced cohorts round-robin to three teams, and writes per-player practice letters when run as a script. No HTTP router. The CSV is input data outside the admitted graph."
+    }
+  },
+  "routes": {}
+}
