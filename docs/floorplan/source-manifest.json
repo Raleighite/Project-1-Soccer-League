@@ -1,0 +1,38 @@
+{
+  "schema": "floorplan/source-manifest@1",
+  "repository": "Raleighite/Project-1-Soccer-League",
+  "source_commit": "d1a57e5233b178b6ed442a2d951b4da15c8dff27",
+  "mapping_source": "original bytes; no credential derivative",
+  "source_policy": "See checker selected(): application Python/JS/HTML/CSS and actual config/static/template/input classes, excluding docs/policy/tests/dependencies/caches.",
+  "source_files": {
+    "league_builder.py": "a33002342051342e819762e20674d6fce414458ce98e4bfe4fc3765102e305fd",
+    "soccer_players.csv": "e312e23d2bdd3f8bf0148494c7f33c5915c033d98aa4880dcd3b73268b62708e"
+  },
+  "admitted_snapshot": {
+    "league_builder.py": "a33002342051342e819762e20674d6fce414458ce98e4bfe4fc3765102e305fd"
+  },
+  "counts": {
+    "files": 1,
+    "codeFiles": 1,
+    "routes": 0,
+    "modules": 3,
+    "unassigned": 0,
+    "flows": 1,
+    "tour": 3
+  },
+  "artifacts": {
+    "check_freshness.py": "1ae338eb0a8e6d9f96994b72b93dc07022f221c412ab55b264bc0105c6e164a3",
+    "generator.json": "04edcc596cf52a21813e117f01c84aac12d29cfe100ac81d10bf0f153efc349b",
+    "source-census.json": "13286888535371401efbb95066de6296437be16134e1e00bf9bd4d6cdc9c63a1",
+    "architecture.json": "4f743e427847711d5530795938f99039a7b7d2215e1ca909ed44863e3531577b",
+    "NOTICE.md": "1b961d21b4feedd4af9be96ea51dd05d1f7cf45304ab4fe88d95ba0cebeada2f",
+    "index.html": "ba24e4c62e80df14281dd886a11b93dde767f68df3d64939ba7d3e2e3453b732",
+    "README.md": "3d1b05a9983ce560fa203f21a9f309b5dfc10565069814e25eb39661cb9cc0e4",
+    "descriptions/reviewed.json": "83e9c33c53b57599a9c2fa40ec9118eec8d73b105a303e0cbde5b8fd17c75f9a",
+    "tests/test_freshness.py": "94a5f53967231f5a9f5228de7a8dc9811f4bf2dc8459c8e24781430bf64c30f7",
+    "licenses/inter-LICENSE.txt": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+    "licenses/elkjs-LICENSE.md": "89591d4578fb1ebd91501312a3d25f021bd865a2e436641c1cf7b1bc7e3c1617",
+    "licenses/LICENSE": "65a06a9dab105cd5a2b713a41a020a442bd431e6e19631182ed3889fd1672faf",
+    "licenses/jetbrains-mono-LICENSE.txt": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b"
+  }
+}
